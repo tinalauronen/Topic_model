@@ -39,11 +39,7 @@ burnin = 1000
 iter = 1000
 keep = 50
 
-## after some googling:
-raw.sum=apply(table,1,FUN=sum) #sum by raw each raw of the table
-table=table[raw.sum!=0,] # delete 0-raws
-
-model <- LDA( dtm , k = k, method = "Gibbs", control =  list(burnin = burnin, iter = iter, keep = keep) )
+model <- LDA( dtm3 , k = k, method = "Gibbs", control =  list(burnin = burnin, iter = iter, keep = keep) )
 
 return( model )
 
